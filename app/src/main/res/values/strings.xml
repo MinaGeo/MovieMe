@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProjectDemo</string>
+    <string name="text">text</string>
+    <string name="date">date</string>
+    <string name="label">label</string>
+    <string name="storyboard">Storyboard</string>
+    <string name="description">Description</string>
+</resources>
