@@ -6,17 +6,21 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 
-class CategoryChoose : AppCompatActivity() {
+class MovieCategoryChoose : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category_choose)
+        setContentView(R.layout.movie_category_choose)
 
+        val topRatedButton: Button = findViewById(R.id.topRatedMovies)
+        val popularButton: Button = findViewById(R.id.popularMovies)
+        val upcomingButton: Button = findViewById(R.id.upcomingMovies)
+        val back: Button = findViewById(R.id.backToCategory)
 
-        val text: TextView = findViewById(R.id.textChoose)
-        val topRatedButton: Button = findViewById(R.id.topRated)
-        val popularButton: Button = findViewById(R.id.popular)
-        val upcomingButton: Button = findViewById(R.id.upcoming)
+        back.setOnClickListener {
+            val intent = Intent(this, MovieorTv::class.java)
 
+            startActivity(intent)
+        }
         upcomingButton.setOnClickListener {
             val intent = Intent(this, UpcomingMovies::class.java)
 

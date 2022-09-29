@@ -13,7 +13,6 @@ import android.widget.TextView
 import androidx.core.content.edit
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recyclerapp.MovieAdapter
 import com.google.android.material.switchmaterial.SwitchMaterial
 import retrofit2.Call
 import retrofit2.Callback
@@ -56,7 +55,7 @@ class UpcomingMovies : AppCompatActivity() {
 
             val backToChoose: Button = findViewById(R.id.backToCategory)
             backToChoose.setOnClickListener {
-                val intent = Intent(this, CategoryChoose::class.java)
+                val intent = Intent(this, MovieCategoryChoose::class.java)
 
                 startActivity(intent)
             }
@@ -79,7 +78,7 @@ class UpcomingMovies : AppCompatActivity() {
         }
 
         private fun getMovieData(callback: (List<Movie>) -> Unit) {
-            val apiService = MovieApiService.getInstance().create(MovieService::class.java)
+            val apiService = ApiService.getInstance().create(Service::class.java)
             apiService.getUpcomingMovieList().enqueue(object : Callback<MovieResponse> {
                 override fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
                     loadingBar.visibility = View.GONE

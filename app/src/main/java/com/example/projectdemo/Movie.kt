@@ -12,7 +12,7 @@ data class Movie(
 
     @SerializedName("title")
     val title: String?,
-//
+
     @SerializedName("vote_average")
     val ratings: Number,
 
@@ -21,10 +21,9 @@ data class Movie(
 
     @SerializedName("id")
     val id: Int,
-//
 
-    @SerializedName("genre_ids")
-    val genres: Array<Int>,
+//    @SerializedName("genre_ids")
+//    val genres: Array<Int>,
 
     @SerializedName("status_message")
     val status: String?,
@@ -38,5 +37,10 @@ data class Movie(
     @SerializedName("adult")
     val adult: Boolean,
 
+    @SerializedName("name")
+    val showName: String?,
+
+    @SerializedName("first_air_date")
+    val showsDate: String?,
 
     ) : Parcelable

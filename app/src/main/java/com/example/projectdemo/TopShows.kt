@@ -18,18 +18,17 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PopularMovies : AppCompatActivity() {
+class TopShows : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var switch: SwitchMaterial
     private lateinit var loadingBar: ProgressBar
     private lateinit var waitPlease: TextView
-
     private lateinit var mySharedPreferences: SharedPreferences
     private lateinit var gridLayoutManager: GridLayoutManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.popular_movies)
-
+        setContentView(R.layout.activity_top_shows)
 
         loadingBar = findViewById(R.id.loading_bar)
         waitPlease = findViewById(R.id.waitPlease)
@@ -61,14 +60,14 @@ class PopularMovies : AppCompatActivity() {
         }
 
         getMovieData { movies: List<Movie> ->
-            val movieAdapter = MovieAdapter(movies)
+            val showsAdapter = ShowsAdapter(movies)
 
-            recyclerView.adapter = movieAdapter
+            recyclerView.adapter = showsAdapter
 
-            movieAdapter.onItemClick = {
+            showsAdapter.onItemClick = {
                 val intent = Intent(this, MovieDetailedActivity::class.java)
 
-                intent.putExtra("PopMovie", it)
+                intent.putExtra("TopShows", it)
 
                 startActivity(intent)
             }
@@ -79,7 +78,7 @@ class PopularMovies : AppCompatActivity() {
 
     private fun getMovieData(callback: (List<Movie>) -> Unit) {
         val apiService = ApiService.getInstance().create(Service::class.java)
-        apiService.getPopularMovieList().enqueue(object : Callback<MovieResponse> {
+        apiService.getTopTvShowsList().enqueue(object : Callback<MovieResponse> {
             override fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
                 loadingBar.visibility = View.GONE
                 waitPlease.visibility = View.GONE
@@ -102,5 +101,4 @@ class PopularMovies : AppCompatActivity() {
 
         }
     }
-}
-
+    }

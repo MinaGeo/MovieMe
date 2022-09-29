@@ -5,60 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0d1137"
-    tools:context=".CategoryChoose">
+    tools:context=".MovieCategoryChoose">
 
+    <Button
+        android:id="@+id/backToCategory"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#e52165"
+        android:bottomLeftRadius="30dp"
+        android:bottomRightRadius="30dp"
+        android:foreground="@drawable/pngegg"
+        android:topLeftRadius="30dp"
+        android:topRightRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/textChoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/blackwidon"
-        android:text="Choose your preferred type"
+        android:text="@string/choose_your_preferred_type"
         android:textColor="#e52165 "
-        android:textSize="28dp"
-        app:layout_constraintBottom_toTopOf="@id/topRated"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@id/topRatedMovies"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/topRated"
+        android:id="@+id/topRatedMovies"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:backgroundTint="#e52165 "
         android:fontFamily="@font/blackwidon"
-        android:text="Top Rated Movies"
-        android:textSize="20dp"
+        android:text="@string/top_rated_movies"
+        android:textSize="20sp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textChoose" />
 
     <Button
-        android:id="@+id/popular"
+        android:id="@+id/popularMovies"
         android:layout_width="220dp"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e52165"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:fontFamily="@font/blackwidon"
-        android:text="Popular Movies"
+        android:text="@string/popular_movies"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topRated" />
+        app:layout_constraintTop_toBottomOf="@id/topRatedMovies" />
     <Button
-        android:id="@+id/upcoming"
+        android:id="@+id/upcomingMovies"
         android:layout_width="220dp"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e52165"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:fontFamily="@font/blackwidon"
-        android:text="Upcoming Movies"
+        android:text="@string/upcoming_movies"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/popular" />
+        app:layout_constraintTop_toBottomOf="@id/popularMovies" />
 </androidx.constraintlayout.widget.ConstraintLayout>

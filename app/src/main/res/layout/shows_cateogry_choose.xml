@@ -5,8 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0d1137"
-    tools:context=".MovieorTv">
-
+    tools:context=".ShowsCategoryChoose">
+    <Button
+        android:id="@+id/backToCategory"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#e52165"
+        android:bottomLeftRadius="30dp"
+        android:bottomRightRadius="30dp"
+        android:foreground="@drawable/pngegg"
+        android:topLeftRadius="30dp"
+        android:topRightRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/textChoose"
         android:layout_width="wrap_content"
@@ -16,19 +29,19 @@
         android:text="@string/choose_your_preferred_type"
         android:textColor="#e52165 "
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@id/Movies"
+        app:layout_constraintBottom_toTopOf="@id/topRatedShows"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Movies"
-        android:layout_width="220dp"
+        android:id="@+id/topRatedShows"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:backgroundTint="#e52165 "
         android:fontFamily="@font/blackwidon"
-        android:text="@string/movies"
+        android:text="@string/top_rated_tv_shows"
         android:textSize="20sp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,17 +49,17 @@
         app:layout_constraintTop_toBottomOf="@id/textChoose" />
 
     <Button
-        android:id="@+id/TvShows"
-        android:layout_width="220dp"
+        android:id="@+id/popularShows"
+        android:layout_width="250dp"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#e52165"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:fontFamily="@font/blackwidon"
-        android:text="@string/tv_shows"
+        android:text="@string/popular_tv_shows"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Movies" />
+        app:layout_constraintTop_toBottomOf="@id/topRatedShows" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

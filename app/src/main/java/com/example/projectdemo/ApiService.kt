@@ -3,7 +3,7 @@ package com.example.projectdemo
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MovieApiService {
+class ApiService {
     companion object {
         private var retrofit: Retrofit? = null
 

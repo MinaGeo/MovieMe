@@ -1,5 +1,6 @@
 package com.example.projectdemo
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,10 +20,10 @@ class MovieDetailedActivity : AppCompatActivity() {
     private lateinit var back: Button
     private lateinit var moviePoster: ImageView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detailed)
-
         ratings = findViewById(R.id.ratings)
         textView = findViewById(R.id.detailedMovieLabel)
         releaseDate = findViewById(R.id.dateReleased)
@@ -32,36 +33,80 @@ class MovieDetailedActivity : AppCompatActivity() {
         back = findViewById(R.id.back)
         moviePoster = findViewById(R.id.detailedMoviePoster)
         home = findViewById(R.id.home)
-//            val fav: Button = findViewById(R.id.favorite)
 
         val movie = intent.getParcelableExtra<Movie>("Movie")
-        val topMovie = intent.getParcelableExtra<Movie>("TopMovie")
+        val popMovie = intent.getParcelableExtra<Movie>("PopMovie")
         val upcomingMovie = intent.getParcelableExtra<Movie>("UpcomingMovie")
+        val popShows = intent.getParcelableExtra<Movie>("PopShows")
+        val topShows = intent.getParcelableExtra<Movie>("TopShows")
+
+
 
         setMovie(movie)
-        setMovie(topMovie)
+        setMovie(popMovie)
         setMovie(upcomingMovie)
+        setMovie(popShows)
+        setMovie(topShows)
+
+
 
         if (upcomingMovie != null) {
+            home.setOnClickListener {
+                val intent = Intent(this, MovieCategoryChoose::class.java)
+                startActivity(intent)
+            }
             back.setOnClickListener {
                 val intent = Intent(this, UpcomingMovies::class.java)
                 startActivity(intent)
             }
         }
-        if (topMovie != null) {
+        if (popMovie != null) {
+            home.setOnClickListener {
+                val intent = Intent(this, MovieCategoryChoose::class.java)
+                startActivity(intent)
+            }
             back.setOnClickListener {
                 val intent = Intent(this, PopularMovies::class.java)
                 startActivity(intent)
             }
         }
         if (movie != null) {
+            home.setOnClickListener {
+                val intent = Intent(this, MovieCategoryChoose::class.java)
+                startActivity(intent)
+            }
             back.setOnClickListener {
                 val intent = Intent(this, TopMovies::class.java)
                 startActivity(intent)
             }
         }
+        if (popShows != null) {
+            textView.text = popShows.showName
+            releaseDate.text = (popShows.showsDate)?.substring(0, 4)
+            home.setOnClickListener {
+                val intent = Intent(this, ShowsCategoryChoose::class.java)
+                startActivity(intent)
+            }
+            back.setOnClickListener {
+                val intent = Intent(this, PopularTvShows::class.java)
+                startActivity(intent)
+            }
+        }
+        if (topShows != null) {
+            textView.text = topShows.showName
+            releaseDate.text = (topShows.showsDate)?.substring(0, 4)
+            home.setOnClickListener {
+                val intent = Intent(this, ShowsCategoryChoose::class.java)
+                startActivity(intent)
+            }
+            back.setOnClickListener {
+                val intent = Intent(this, TopShows::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setMovie(movieType: Movie?) {
         if (movieType != null) {
             ratings.text = movieType.ratings.toString()
@@ -70,13 +115,7 @@ class MovieDetailedActivity : AppCompatActivity() {
             ratings.text = (movieType.ratings.toFloat()).toString()
             releaseDate.text = (movieType.release)?.substring(0, 4)
             language.text = movieType.language
-//fav.setOnClickListener {
-//    fav.setBackgroundColor(Color.parseColor("#e52165"))
-//}
-            home.setOnClickListener {
-                val intent = Intent(this, CategoryChoose::class.java)
-                startActivity(intent)
-            }
+
             val media = "https://image.tmdb.org/t/p/w500/"
             Glide.with(this)
                 .load(media + movieType.poster)
