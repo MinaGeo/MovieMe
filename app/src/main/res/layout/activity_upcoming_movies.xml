@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0d1137"
-    tools:context=".MainActivity">
+    tools:context=".UpcomingMovies">
     <Button
         android:id="@+id/backToCategory"
         android:layout_width="40dp"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/blackwidon"
-        android:text="Top Rated Movies"
+        android:text="Upcoming Movies"
         android:textAlignment="center"
         android:textColor="#e52165 "
         android:textSize="30sp"
@@ -84,6 +84,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:spanCount="1"
         tools:listitem="@layout/movie_item" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

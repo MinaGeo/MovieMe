@@ -5,4 +5,8 @@
     <string name="label">label</string>
     <string name="storyboard">Storyboard</string>
     <string name="description">Description</string>
+    <string name="ratings">text</string>
+    <string name="deco">*</string>
+    <string name="story_line">Story Line</string>
+    <string name="lang">lang</string>
 </resources>

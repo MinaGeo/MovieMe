@@ -15,32 +15,29 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerapp.MovieAdapter
 import com.google.android.material.switchmaterial.SwitchMaterial
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import retrofit2.*
 
-class MainActivity2 : AppCompatActivity() {
+class TopMovies : AppCompatActivity() {
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var switch: SwitchMaterial
     private lateinit var loadingBar: ProgressBar
     private lateinit var waitPlease: TextView
-
     private lateinit var mySharedPreferences: SharedPreferences
     private lateinit var gridLayoutManager: GridLayoutManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
-
+        setContentView(R.layout.top_movies)
 
         loadingBar = findViewById(R.id.loading_bar)
         waitPlease = findViewById(R.id.waitPlease)
+        switch = findViewById(R.id.switcher)
+        recyclerView = findViewById(R.id.main_recycler_view)
 
         mySharedPreferences =
             getSharedPreferences("com_example_project_demo_SHARED_PREF", Context.MODE_PRIVATE)
         val spanCount = mySharedPreferences.getInt("Span_count", 2)
-
-        recyclerView = findViewById(R.id.main_recycler_view)
-        switch = findViewById(R.id.switcher)
 
         if (spanCount == 2) switch.isChecked = true
 
@@ -80,7 +77,7 @@ class MainActivity2 : AppCompatActivity() {
 
     private fun getMovieData(callback: (List<Movie>) -> Unit) {
         val apiService = MovieApiService.getInstance().create(MovieService::class.java)
-        apiService.getPopularMovieList().enqueue(object : Callback<MovieResponse> {
+        apiService.getTopRatedMovieList().enqueue(object : Callback<MovieResponse> {
             override fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
                 loadingBar.visibility = View.GONE
                 waitPlease.visibility = View.GONE
@@ -104,4 +101,3 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 }
-

@@ -15,15 +15,21 @@ class CategoryChoose : AppCompatActivity() {
         val text: TextView = findViewById(R.id.textChoose)
         val topRatedButton: Button = findViewById(R.id.topRated)
         val popularButton: Button = findViewById(R.id.popular)
+        val upcomingButton: Button = findViewById(R.id.upcoming)
 
+        upcomingButton.setOnClickListener {
+            val intent = Intent(this, UpcomingMovies::class.java)
+
+            startActivity(intent)
+        }
         topRatedButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, TopMovies::class.java)
 
             startActivity(intent)
         }
 
         popularButton.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
+            val intent = Intent(this, PopularMovies::class.java)
 
             startActivity(intent)
         }

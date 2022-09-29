@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0d1137"
-    tools:context=".MainActivity2">
+    tools:context=".TopMovies">
     <Button
         android:id="@+id/backToCategory"
         android:layout_width="40dp"
@@ -84,5 +84,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:spanCount="1"
         tools:listitem="@layout/movie_item" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

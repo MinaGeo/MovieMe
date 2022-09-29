@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Movie-Me-master/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2245" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Movie-Me-master/app/src/main/res/layout/activity_category_choose.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Movie-Me-master/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Movie-Me-master/app/src/main/res/layout/activity_movie_detailed.xml" value="1.6" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Movie-Me-master/app/src/main/res/layout/activity_main2.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Movie-Me-master/app/src/main/res/layout/activity_movie_detailed.xml" value="0.26625766871165646" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Movie-Me-master/app/src/main/res/layout/activity_upcoming_movies.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/ProjectDemo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/ProjectDemo/app/src/main/res/drawable-v24/my_border.xml" value="0.2265" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/ProjectDemo/app/src/main/res/drawable/gradient_bg.xml" value="0.2265" />
